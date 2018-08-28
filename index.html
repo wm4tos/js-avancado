@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <script src="js/app/models/Negociacao.js" defer></script>
-    <script src="js/app/models/ListaNegociacoes.js"></script>
+    <script src="js/app/models/ListaNegociacoes.js" defer></script>
+    <script src="js/app/helpers/DateHelper.js" defer></script>
+    <script src="js/app/views/NegociacoesView.js" defer></script>
     <script src="js/app/controllers/NegociacaoController.js" defer></script>
     <script src="js/app/index.js" defer></script>
-    <script src="js/app/helpers/DateHelper.js" defer></script>
 </head>
 <body class="container">
     
@@ -46,22 +47,7 @@
     <br>
     <br>
     
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-        </tbody>
-        
-        <tfoot>
-        </tfoot>
-    </table>
+    <div id="ListaNegociacoes"></div>
     
 </body>
 </html>
