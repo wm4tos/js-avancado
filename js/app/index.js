@@ -1,0 +1,1 @@
+const negociacaoController = new NegociacaoController();
