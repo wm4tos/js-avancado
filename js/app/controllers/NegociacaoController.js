@@ -13,6 +13,12 @@ class NegociacaoController{
 
     this._mensagemView = new MensagemView($("#mensagemView"));
   }
+
+  apaga(){
+    this._listaNegociacoes.esvazia();
+
+    this._atualiza("Negociação apagada com sucesso.");
+  }
   
   adiciona(event){
     event.preventDefault();
@@ -21,13 +27,17 @@ class NegociacaoController{
 
     this._listaNegociacoes.adiciona(negociacao);
 
-    this._negociacoesView.update(this._listaNegociacoes);
-
-    this._mensagemView.defineMensagem = "Negociação adicionada com sucesso.";
-    this._mensagemView.update(this._mensagemView);
+    this._atualiza("Negociação adicionada com sucesso." )
 
     this._limpaFormulario();
 
+  }
+
+  _atualiza(mensagem){
+    this._negociacoesView.update(this._listaNegociacoes);
+
+    this._mensagemView.defineMensagem = mensagem;
+    this._mensagemView.update(this._mensagemView);
   }
 
   _criaNegociacao(){
