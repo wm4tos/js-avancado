@@ -8,6 +8,8 @@
     <script src="js/app/models/Negociacao.js" defer></script>
     <script src="js/app/models/ListaNegociacoes.js" defer></script>
     <script src="js/app/helpers/DateHelper.js" defer></script>
+    <script src="js/app/views/View.js" defer></script>
+    <script src="js/app/views/MensagemView.js" defer></script>
     <script src="js/app/views/NegociacoesView.js" defer></script>
     <script src="js/app/controllers/NegociacaoController.js" defer></script>
     <script src="js/app/index.js" defer></script>
@@ -15,6 +17,8 @@
 <body class="container">
     
     <h1 class="text-center">Negociações</h1>
+
+    <div id="mensagemView"></div>
     
     <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
