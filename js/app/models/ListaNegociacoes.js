@@ -15,8 +15,12 @@ class ListaNegociacoes{
   }
 
   esvazia(){
-    this._negociacoes = [];
-    this._atualiza("Negociação apagada com sucesso.");
+    if(this._negociacoes.length == 0){
+      this._atualiza("Não há negociações a serem apagadas.")
+    }else{
+      this._negociacoes = [];
+      this._atualiza("Negociações apagadas com sucesso.");
+    }
   }
 
 }
