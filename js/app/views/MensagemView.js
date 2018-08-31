@@ -6,7 +6,7 @@ class MensagemView extends View{
     return this._mensagem;
   }
 
-  set defineMensagem(mensagem){
+  set mensagem(mensagem){
     this._mensagem = mensagem;
   }
 

@@ -9,7 +9,7 @@ class NegociacaoController{
     this._listaNegociacoes = new ListaNegociacoes((mensagem) => {
       this._negociacoesView.update(this._listaNegociacoes);
   
-      this._mensagemView.defineMensagem = mensagem;
+      this._mensagemView.mensagem = mensagem;
       this._mensagemView.update(this._mensagemView);
     });
 
