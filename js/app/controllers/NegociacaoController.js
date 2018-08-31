@@ -34,13 +34,6 @@ class NegociacaoController{
 
   }
 
-  atualiza(mensagem){
-    this._negociacoesView.update(this._listaNegociacoes);
-
-    this._mensagemView.defineMensagem = mensagem;
-    this._mensagemView.update(this._mensagemView);
-  }
-
   _criaNegociacao(){
     return new Negociacao(new Date(DateHelper.textoParaData(this._inputData.value)), this._inputQuantidade.value,this._inputValor.value);
   }
