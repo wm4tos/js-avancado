@@ -1,13 +1,11 @@
 class ListaNegociacoes{
 
-  constructor(funcaoAtualiza){
+  constructor(){
     this._negociacoes = []
-    this._atualiza = funcaoAtualiza;
   }
 
   adiciona(negociacao){
     this._negociacoes.push(negociacao);
-    this._atualiza("Negociação adicionada com sucesso.");
   }
 
   get negociacoes(){
@@ -15,12 +13,7 @@ class ListaNegociacoes{
   }
 
   esvazia(){
-    if(this._negociacoes.length == 0){
-      this._atualiza("Não há negociações a serem apagadas.")
-    }else{
-      this._negociacoes = [];
-      this._atualiza("Negociações apagadas com sucesso.");
-    }
+    this._negociacoes = [];
   }
 
 }

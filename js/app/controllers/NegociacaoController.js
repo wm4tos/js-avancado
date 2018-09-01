@@ -6,12 +6,7 @@ class NegociacaoController{
     this._inputQuantidade = $("#quantidade");
     this._inputValor = $("#valor");
 
-    this._listaNegociacoes = new ListaNegociacoes((mensagem) => {
-      this._negociacoesView.update(this._listaNegociacoes);
-  
-      this._mensagemView.mensagem = mensagem;
-      this._mensagemView.update(this._mensagemView);
-    });
+    this._listaNegociacoes = new ListaNegociacoes();
 
     this._negociacoesView = new NegociacoesView($("#ListaNegociacoes"));
     this._negociacoesView.update(this._listaNegociacoes);
@@ -20,7 +15,12 @@ class NegociacaoController{
   }
 
   apaga(){
-    this._listaNegociacoes.esvazia();
+    if(this._listaNegociacoes.negociacoes.length == 0){
+      UpdateHelper.update("Não existem negociações a serem apagadas.", this);
+    }else{
+      this._listaNegociacoes.esvazia();
+      UpdateHelper.update("Negociações apagadas com sucesso.", this)
+    }
   }
   
   adiciona(event){
@@ -29,6 +29,7 @@ class NegociacaoController{
     let negociacao = this._criaNegociacao();
 
     this._listaNegociacoes.adiciona(negociacao);
+    UpdateHelper.update("Negociação adicionada com sucesso.", this);
 
     this._limpaFormulario();
 
